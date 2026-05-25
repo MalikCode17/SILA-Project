@@ -612,3 +612,66 @@ legend {
     border: 1px solid #334155;
     background: none;
 }
+
+
+
+
+/* M11- TABLE */
+.data-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    /*  MENJADIKAN BATAS DEMPET DENGAN SEKITARNYA  */
+    margin-top: 16px; 
+    min-width: 600px; 
+    /* Lebar batas mutlak  */
+} 
+ 
+.data-table caption { 
+    text-align: left; 
+    font-size: 0.85rem; 
+    color: #64748b; 
+    margin-bottom: 12px; 
+} 
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+    /* Memberi garis bawah di setiap akhir barisan */
+}
+
+/* 3. Bedakan warna bagian thead; */
+.data-table th {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+ /* Zebra Stripes */
+.data-table tbody tr:nth-child(even) { 
+    background-color: rgba(30, 41, 59, 0.5); 
+    /* / Warna abu-abu yang lumayan lebur transparan /  */
+} 
+
+/* row hover */
+.data-table tbody tr:hover{
+    background-color: #1e293b;
+}
+
+/* Responsif table ukuran maks 760px */
+@media (max-width: 760px) { 
+    .data-table { font-size: 0.8rem; } 
+    .data-table th, 
+    .data-table td {
+        padding: 8px 10px; 
+    } 
+} 

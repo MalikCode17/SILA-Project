@@ -30,7 +30,7 @@ function validasiForm() {
     if (nama === '' || nim === '' || prodi === '' || layanan === '' || tanggal === '') {
         alert('❌ Semua field wajib diisi!');
         // Mencegah Submit halaman
-        return false; / Mencegah submit halaman! /
+        return false; 
     }
 
     // Cek NIM harus 8 digit angka 

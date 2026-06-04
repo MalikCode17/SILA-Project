@@ -47,7 +47,7 @@ function validasiForm() {
         'Layanan: ' + layanan + '\n' +
         'Tanggal: ' + formatTanggal(tanggal));
 
-    return true; / Yes, form sah dikirim /
+    return true; 
 
 
     // Berhasil 

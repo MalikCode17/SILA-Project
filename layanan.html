@@ -13,7 +13,6 @@
 
 <body>
 
-    <!-- HEADER & NAVIGASI -->
     <header class="navbar">
         <div class="container navbar-inner">
             <a href="index.html" class="logo">🎓 SILA</a>
@@ -39,41 +38,34 @@
                 <h1>Ajukan Layanan Akademik</h1>
                 <p class="section-desc">Lengkapi form di bawah untuk mengajukan layanan akademik Anda.</p>
 
-                <!-- nama lengkap, NIM, program studi, jenis layanan, tanggal pengajuan, keterangan -->
-
-
-                <form action="#" method="post" class="form-card" onsubmit="return validasiForm()">
+                <form id="formPengajuan" class="form-card">
                     <fieldset>
                         <legend>Data Pengajuan</legend>
 
-                        <!-- Input Nama Lengkap -->
+                        <p id="formError" class="form-error"></p>
+
                         <div class="form-group">
                             <label for="nama">Nama Lengkap</label>
-                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" >
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
                         </div>
 
-                        <!-- NIM -->
                         <div class="form-row">
-                            <div class=" form-group">
-                                <label for="Nim">NIM</label>
-                                <input type="text" id="nim">
+                            <div class="form-group">
+                                <label for="nim">NIM</label>
+                                <input type="text" id="nim" name="nim" placeholder="Contoh: 12345678" maxlength="8">
                             </div>
-
-                            <!-- Program Studi -->
-                            <div class=" form-group">
+                            <div class="form-group">
                                 <label for="prodi">Program Studi</label>
-                                <select name="Prodi" id="prodi">
-                                    <option value="">--Pilih Program Studi--</option>
+                                <select id="prodi" name="prodi">
+                                    <option value="">— Pilih Program Studi —</option>
                                     <option value="Sistem Informasi">Sistem Informasi</option>
                                     <option value="Teknik Informatika">Teknik Informatika</option>
-                                    <option value="Teknologi Informasi">Teknologi Informasi</option>
                                     <option value="Manajemen">Manajemen</option>
-                                    <option value="'Akuntansi">Akuntansi</option>
+                                    <option value="Akuntansi">Akuntansi</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Jenis Layanan -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="layanan">Jenis Layanan</label>
@@ -91,27 +83,22 @@
                             </div>
                         </div>
 
-                        <!-- Keterangan -->
                         <div class="form-group">
                             <label for="keterangan">Keterangan (opsional)</label>
                             <textarea id="keterangan" name="keterangan" rows="3"
                                 placeholder="Jelaskan alasan pengajuan Anda..."></textarea>
                         </div>
 
-                        <!-- (Submit dan Reset -->
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">🚀 Ajukan
-                                Sekarang</button>
+                            <button type="submit" class="btn btn-primary">🚀 Ajukan Sekarang</button>
                             <button type="reset" class="btn btn-outline">↺ Reset</button>
                         </div>
-
                     </fieldset>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-inner">
             <div>

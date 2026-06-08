@@ -335,53 +335,32 @@ h3 {
 }
 
 
-
-
 /* ================================
    MEDIA QUERY & RESPONSIF — SILA
    ================================ */
 
-/* --------------------------------
-   Animasi CSS (@keyframes)
-   Mendefinisikan gerakan bernama 'fadeIn':
-   - from: posisi awal (tersembunyi, geser ke bawah)
-   - to: posisi akhir (terlihat, posisi normal)
-   -------------------------------- */
+/* Animasi */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        /* transparan penuh */
         transform: translateY(20px);
-        /* geser 20px ke bawah */
     }
 
     to {
         opacity: 1;
-        /* terlihat penuh */
         transform: translateY(0);
-        /* posisi normal */
     }
 }
 
-/* Hero section mendapat animasi fadeIn selama 0.6 detik */
 .hero {
     animation: fadeIn 0.6s ease;
 }
 
 
 
-/* --------------------------------
-   Hamburger Menu Animasi
-   Saat checkbox dicentang, 3 garis hamburger
-   berubah menjadi tanda 'X' (close):
-   - Garis ke-1: putar 45° ke bawah
-   - Garis ke-2: hilang (opacity 0)
-   - Garis ke-3: putar -45° ke atas
-   -------------------------------- */
-
+/* Hamburger */
 .nav-toggle {
     display: none;
-    /* checkbox tersembunyi */
 }
 
 .hamburger {
@@ -399,29 +378,19 @@ h3 {
     background-color: #f1f5f9;
     border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
-    /* animasi garis */
 }
 
-/* Garis-1: miring ke kanan membentuk '/' */
 .nav-toggle:checked~label .hamburger span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
 
-/* Garis-2: menghilang */
 .nav-toggle:checked~label .hamburger span:nth-child(2) {
     opacity: 0;
 }
 
-/* Garis-3: miring ke kiri membentuk '\' */
 .nav-toggle:checked~label .hamburger span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
-/* --------------------------------
-   Responsive: Tablet & Mobile (<= 768px)
-   Semua grid/flex berubah ke 1 kolom/baris
-   agar konten tidak terlalu sempit di layar kecil.
-   -------------------------------- */
 
 /* Tablet & Mobile */
 @media (max-width: 768px) {
@@ -431,7 +400,6 @@ h3 {
 
     .hamburger {
         display: flex;
-        /* tampilkan hamburger */
     }
 
     nav {
@@ -459,30 +427,23 @@ h3 {
         display: flex;
     }
 
-    /* SAMBUNG DARI SINI */
-    /* ================== */
-
     .nav-menu {
         gap: 4px;
     }
 
-    /* Judul hero lebih kecil di mobile */
     .hero h1 {
         font-size: 1.5rem;
     }
 
-    /* Tombol berubah jadi vertikal (kolom) */
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
 
-    /* Cards: dari 2 kolom → 1 kolom */
     .cards-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Steps & stats berubah ke arah vertikal */
     .steps-grid {
         flex-direction: column;
     }
@@ -491,36 +452,32 @@ h3 {
         flex-direction: column;
     }
 
-    /* Footer: dari 2 kolom → 1 kolom */
     .footer-inner {
         grid-template-columns: 1fr;
         gap: 24px;
     }
 }
 
-/* --------------------------------
-   Responsive: Layar Sangat Kecil (<= 480px)
-   Untuk smartphone kecil:
-   - Judul lebih kecil lagi
-   - Tombol lebar penuh (100%)
-   -------------------------------- */
 /* Small Mobile */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.25rem;
     }
 
-    /* Tombol mengisi penuh lebar layar */
     .btn {
         width: 100%;
         text-align: center;
     }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 
-/* / ================================ 
-   FORMS — SILA 
-   ================================ /  */
+/* ================================
+   FORMS — SILA
+   ================================ */
 
 .form-card {
     max-width: 640px;
@@ -553,7 +510,6 @@ legend {
     margin-bottom: 6px;
 }
 
-/* tata ulang untuk input kolom, dropdown, dan textarea */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -589,7 +545,6 @@ legend {
     min-height: 80px;
 }
 
-/* agar kotak isian menjadi 2 kolom  */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -614,34 +569,37 @@ legend {
 }
 
 
+/* ================================
+   TABLES — SILA
+   ================================ */
 
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
-/* M11- TABLE */
-.data-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    /*  MENJADIKAN BATAS DEMPET DENGAN SEKITARNYA  */
-    margin-top: 16px; 
-    min-width: 600px; 
-    /* Lebar batas mutlak  */
-} 
- 
-.data-table caption { 
-    text-align: left; 
-    font-size: 0.85rem; 
-    color: #64748b; 
-    margin-bottom: 12px; 
-} 
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    min-width: 600px;
+}
+
+.data-table caption {
+    text-align: left;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
 
 .data-table th,
 .data-table td {
-    padding: 12px 15px;
+    padding: 12px 16px;
     text-align: left;
     border-bottom: 1px solid #334155;
-    /* Memberi garis bawah di setiap akhir barisan */
 }
 
-/* 3. Bedakan warna bagian thead; */
 .data-table th {
     background-color: #1e293b;
     color: #f1f5f9;
@@ -656,22 +614,127 @@ legend {
     font-size: 0.9rem;
 }
 
- /* Zebra Stripes */
-.data-table tbody tr:nth-child(even) { 
-    background-color: rgba(30, 41, 59, 0.5); 
-    /* / Warna abu-abu yang lumayan lebur transparan /  */
-} 
+/* Zebra Stripes */
+.data-table tbody tr:nth-child(even) {
+    background-color: rgba(30, 41, 59, 0.5);
+}
 
-/* row hover */
-.data-table tbody tr:hover{
+/* Hover */
+.data-table tbody tr:hover {
     background-color: #1e293b;
 }
 
-/* Responsif table ukuran maks 760px */
-@media (max-width: 760px) { 
-    .data-table { font-size: 0.8rem; } 
-    .data-table th, 
+@media (max-width: 768px) {
+    .data-table {
+        font-size: 0.8rem;
+    }
+
+    .data-table th,
     .data-table td {
-        padding: 8px 10px; 
-    } 
-} 
+        padding: 8px 10px;
+    }
+}
+
+
+/* ================================
+   JAVASCRIPT LANJUTAN — SILA
+   CSS untuk elemen dinamis yang dihasilkan
+   atau dikendalikan oleh JavaScript.
+   ================================ */
+
+/* --------------------------------
+   Form Error
+   Elemen untuk menampilkan pesan error
+   validasi form secara real-time (tanpa alert).
+   min-height: menjaga layout tidak melompat
+   saat pesan error muncul/hilang.
+   -------------------------------- */
+.form-error {
+    color: #f87171;
+    /* warna merah terang */
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+    min-height: 20px;
+    /* tinggi minimum agar layout stabil */
+}
+
+/* --------------------------------
+   Toolbar
+   Baris atas tabel yang berisi teks info
+   (jumlah data) dan tombol aksi (hapus semua).
+   Menggunakan Flexbox dengan elemen berjauhan.
+   -------------------------------- */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    /* kiri: info, kanan: tombol */
+    align-items: center;
+    margin-bottom: 16px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* --------------------------------
+   Empty State
+   Tampilan yang muncul saat tabel kosong
+   (belum ada data yang diinput).
+   -------------------------------- */
+.empty-state {
+    text-align: center;
+    padding: 48px 0;
+    color: #64748b;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+/* --------------------------------
+   Tombol Edit & Hapus (Per Baris)
+   Tombol kecil yang muncul di setiap baris tabel,
+   dibuat oleh JavaScript secara dinamis.
+   .btn-edit  → border biru, teks biru
+   .btn-hapus → border merah, teks merah
+   Saat hover: background terisi warna penuh.
+   -------------------------------- */
+
+/* Tombol Edit: outline biru */
+.btn-edit {
+    background: none;
+    border: 1px solid #60a5fa;
+    /* biru muda */
+    color: #60a5fa;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 4px;
+}
+
+/* Saat hover: background penuh biru, teks gelap */
+.btn-edit:hover {
+    background-color: #60a5fa;
+    color: #0f172a;
+    /* kontras teks di background biru */
+}
+
+/* Tombol Hapus: outline merah */
+.btn-hapus {
+    background: none;
+    border: 1px solid #f87171;
+    /* merah muda */
+    color: #f87171;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Saat hover: background penuh merah, teks gelap */
+.btn-hapus:hover {
+    background-color: #f87171;
+    color: #0f172a;
+}
